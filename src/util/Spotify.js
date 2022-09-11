@@ -1,6 +1,6 @@
 let globalToken, timer;
 const clientID = '0313551fc043404f9e015e2306460b03';
-const redirectURI = 'http://localhost:3000/';
+const redirectURI = 'https://playmaker-beta.vercel.app';
 
 
 export const Spotify = {
