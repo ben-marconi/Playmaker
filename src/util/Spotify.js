@@ -2,10 +2,9 @@ let globalToken, timer;
 const clientID = '0313551fc043404f9e015e2306460b03';
 const redirectURI = 'https://playmaker-beta.vercel.app/';
 
-
 export const Spotify = {
     getAccessToken() {
-        globalToken = localStorage.getItem('globalToken');
+        globalToken = sessionStorage.getItem('globalToken');
         if(globalToken) {
             return globalToken;
         }
@@ -13,11 +12,13 @@ export const Spotify = {
         const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
         if (tokenMatch && expiresInMatch) {
             globalToken = tokenMatch[1];
-            localStorage.setItem('globalToken', globalToken);
-            setTimeout(() =>{
-                localStorage.setItem('globalToken', '');
-            }, expiresInMatch[1]*1000);
+            sessionStorage.setItem('globalToken', globalToken);
             const expires = Number(expiresInMatch[1]);
+            console.log(expires);
+            setTimeout(() =>{
+                sessionStorage.setItem('globalToken', '');
+            }, expires*1000);
+            
             window.setTimeout(() => {globalToken = ''; window.history.pushState('Access Token', null, '/');}, expires*1000);
             window.history.pushState('Access Token', null, '/');
             return globalToken;

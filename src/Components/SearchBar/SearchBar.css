@@ -5,6 +5,11 @@
     padding-top: 1.94rem;
 
   }
+
+  #searchDiv {
+    display:flex;
+    flex-direction:row;
+  }
   
   .SearchBar input {
     width: 287px;
@@ -41,6 +46,7 @@
   }
 
   .clearSearch {
+    position: relative;
     cursor: pointer;
     padding: .5rem;
     font-size: 1.05rem;
@@ -49,6 +55,7 @@
     background-color: rgba(0, 0, 0, 0);
     color: black;
     margin-left: -30px;
+    bottom: 18px;
   }
   
   .clearSearch:hover {

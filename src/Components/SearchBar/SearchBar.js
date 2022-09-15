@@ -27,7 +27,7 @@ export class SearchBar extends React.Component {
     render() {
         return (
             <div className="SearchBar">
-                <div>
+                <div id = 'searchDiv'>
                     <input autoFocus className = "searchInput" placeholder="Enter A Song, Album or Artist" onChange = {this.handleTermChange}/>
                     <button className = "clearSearch" onClick={this.clearSearch}>×</button>
                 </div>

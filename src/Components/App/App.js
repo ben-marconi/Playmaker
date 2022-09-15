@@ -7,7 +7,7 @@ import {SearchBar} from '../SearchBar/SearchBar';
 import { render } from '@testing-library/react';
 import {Spotify} from '../../util/Spotify';
 import {Recommended} from '../Recommended/Recommended';
-
+Spotify.getAccessToken();
 
 
 class App extends React.Component {
